@@ -1,22 +1,88 @@
-// document.getElementById('orangediv').style.background = "black"
+// three simples ways to work with javascript in our browser
 
-// method 1
-// document.getElementById('orangedivtstfddffg').style.background = "#87CEEB"
+// using the alert method
+// alert('Welcome to my first javascript code')
 
-// ES 5
+// using the console
+console.log("it works, i can write on the console!!!")
 
-var seconddiv = document.getElementById('orangediv')
+// ES5
+// Dom -- document object model
+// document --keyword
+console.log(document)
 
-// poping an alert when clicked
-seconddiv.addEventListener('click', function () {
-    alert('orange div is clicked')
-})
+// selecting an html element by ID
+document.getElementById('rightchild')
 
-// changing the element backgroud
-seconddiv.style.background = "blue" 
+// variable -- is just a simple name
+var rightdiv = document.getElementById('rightchild')
+console.log(rightdiv)
 
-function popsomething() {
-    alert("Welcome, box 1 is now clicked")
+// outputing in our html elements
+rightdiv.innerHTML = "This works just cool"
+
+// changing an HTML element background --Dom manipulation
+// rightdiv.style.background = "blue"
+
+// function --- holds block of javascript code - ES5
+function Popsomething() {
+    // write our desired block of codes
+    alert('i am poping something')
 }
 
-var rightdiv = document.querySelector('#rightdiv')
+// how to call a function
+// Popsomething()
+
+function clickedorange() {
+    alert('Orange div is clicked')
+}
+
+
+// our background changer code ---
+
+// function changebgtoorange() {
+//     rightdiv.style.background = "#FFA800"
+// }
+
+// function changebgtotomato() {
+//     rightdiv.style.background = "tomato"
+// }
+
+// function toskyblue() {
+//     rightdiv.style.background = "skyblue"
+// }
+
+// building our background changer app with 3 lines of code
+function changebg(desiredcolor) {
+    rightdiv.style.background = desiredcolor
+}
+
+
+
+
+// creating a function with parameters
+function printsomething(something) {
+    console.log(something)
+}
+
+// how to call functions and pass arguements to them
+printsomething('where is my  agbado')
+
+printsomething("say  my name")
+
+printsomething("call me zaddy")
+
+
+
+// mobile menue app
+
+var menuholder = document.querySelector('.menubar-Holder')
+console.log(menuholder)
+
+// adding a classname to our html element
+
+// menuholder.classList.add('purplemenubar')
+
+function menuhandler() {
+    menuholder.classList.toggle('purplemenubar')
+}

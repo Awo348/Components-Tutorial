@@ -1,55 +1,266 @@
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
+    /* top right bottom left ---clockwise */
+    margin: 0;
+    padding: 0;
 }
 
-.color-changer-project {
-    padding-top: 60px;
-    /* border: 3px solid black; */
+/* working with pseudo elements */
+.menubar-Holder {
+    /* border: 3px solid tomato; */
+    padding: 30px 0;
+    text-align: center;
+    /* margin-bottom: 30px; */
+    background: tomato;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* this trick only works with block level elements with sepcific width */
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 30px auto;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
-.color-app-holder {
-    /* border: 3px solid red; */
+.menubar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    /* background: black; */
+    height: 12px;
+    width: 70px;
+    position: relative;
+    /* transform: translateY(50px);
+    transform: translateX(100px); */
+}
+
+.menubar::before {
+    content: " ";
+    background: red;
+    height: 12px;
+    width: 70px;
+    position: absolute;
+    transform: translateY(-20px);
+}
+
+.menubar::after {
+    content: '';
+    background: black;
+    height: 12px;
+    width: 70px;
+    position: absolute;
+    transform: translateY(20px);
+}
+
+.purplemenubar {
+    background: purple;
+}
+
+.purplemenubar .menubar {
+    /* opacity: 0; */
+    /* display: none; */
+    background: transparent;
+}
+
+.purplemenubar .menubar::before {
+    transform: rotate(45deg);
+}
+
+
+.purplemenubar .menubar::after {
+    /* opacity: 1; */
+    /* display: block; */
+    transform: rotate(-45deg);
+}
+
+
+
+h1 {
+    color: blue;
+    position: relative;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1::before {
+    content: "Before element";
+    color: tomato;
+    /* margin-right: 30px; */
+    position: absolute;
+    top: -20px;
+}
+
+h1::after {
+    content: "After element";
+    background: tomato;
+    position: absolute;
+    bottom: -20px;
+    /* left: 0; */
+}
+
+
+
+/* our background chnager app  */
+.background-changer-app {
+    display: flex;
+    justify-content: center;
+    /* border: 3px solid black; */
+    padding: 40px 0;
+    margin-bottom: 20px;
+
+}
+
+.bgchanger-app-holder {
+    /* border: 3px solid tomato; */
     width: 450px;
-    height: 200px;
+    height: 250px;
     display: flex;
 }
 
-.left-holder {
+.leftchild {
+    width: 15%;
     height: 100%;
     background: #d9d9d9;
-    width: 15%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.right-holder {
-    height: 100%;
-    background: #FFA800;
+.rightchild {
     width: 85%;
+    height: 100%;
+    background: black;
+    color: white;
 }
 
-.circle {
+.circles {
     /* border: 3px solid red; */
-    height: 50px;
     width: 50px;
-
+    height: 50px;
     border-radius: 50%;
 }
 
-.red {
+.orange {
     background: #FFA800;
 }
 
-.orange {
+.tomato {
     background: tomato;
 }
 
-.blue {
-    background: #87CEEB;
+.skyblue {
+    background: skyblue;
+}
+
+
+
+
+
+
+/* working with margin */
+.working-with-margin {
+    border: 3px solid black;
+    display: flex;
+}
+
+.child1,
+.child2 {
+    width: 250px;
+    height: 200px;
+}
+
+.child1 {
+    /* border-width: 3px;
+    border-style: solid;
+    border-color: red; */
+
+    /* border: 3px solid red; */
+    /* margin-right: 50px; */
+    border-right: 8px solid tomato;
+    border-left: 10px dashed red;
+}
+
+.child2 {
+    border: 3px dashed blue;
+    margin-left: 100px;
+    /* padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    padding-left: 10px; */
+
+    /* top & bottom ---- left and right */
+    padding: 30px 10px;
+}
+
+.child2-innerchild {
+    background: tomato;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* working with flexbox */
+
+.working-with-flexbox-row {
+    margin-top: 50px;
+    border: 3px solid tomato;
+    display: flex;
+    flex-direction: row;
+    height: 350px;
+    /* justify-content */
+    /* justify-content: center; */
+    justify-content: space-evenly;
+
+    align-items: center;
+
+
+    /* main-axis */
+    /* cross-axis */
+}
+
+.working-with-flexbox-column {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+    border: 3px solid #87ceeb;
+    height: 550px;
+}
+
+.flex-child {
+    border: 2px solid black;
+    width: 150px;
+    height: 150px;
+}
+
+/* working with combinators */
+
+/* --- Desecndant selector(space) */
+.working-with-combinators div {
+    background: tomato;
+}
+
+/* child secltor (>)*/
+.working-with-combinators>p {
+    color: blue;
+}
+
+/* adjacent sibling secltor (+) */
+div+p {
+    background: black;
+}
+
+/* genral sibling seclector (~) */
+div~p {
+    background-color: tomato;
+    color: white;
 }

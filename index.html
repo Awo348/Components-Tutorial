@@ -1,29 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Components Tutorial</title>
+    <title>Component Tutorial</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
-    <section class="color-changer-project">
-        <div class="color-app-holder">
-            <div class="left-holder">
-
-                <div class="circle red" onclick=popsomething()></div>
-                <div class="circle orange" id="orangediv"></div>
-                <div class="circle blue"></div>
-
+    <section class="menubar-Holder " onclick="menuhandler()">
+        <div class="menubar"></div>
+    </section>
+    <section class="working-with-pseudo-elements">
+        <h1>Using pseudo elements</h1>
+    </section>
+    <section class="background-changer-app">
+        <div class="bgchanger-app-holder">
+            <div class="leftchild">
+                <div class="circles orange" onclick="changebg('#FFA800')"></div>
+                <div onclick="changebg('tomato')" class="circles tomato"></div>
+                <div class="circles skyblue" onclick="changebg('skyblue')"></div>
             </div>
-            <div class="right-holder" id="rightdiv"></div>
+            <div class="rightchild" id="rightchild"></div>
+        </div>
+    </section>
+
+    <section class="working-with-combinators">
+        <div>
+            some random div
+            <p>i am pargagraph inside of a child div</p>
+        </div>
+
+        <p>Working with css combinators</p>
+        <p>second p sibling </p>
+        <p>third p sibling </p>
+
+        <span>I am working</span>
+        <p>Working with css combinators</p>
+        <span>I am working</span>
+
+        <div>
+            second random div
         </div>
     </section>
 
 
+
+    <section class="working-with-margin">
+        <div class="child1"></div>
+        <div class="child2">
+            <div class="child2-innerchild"></div>
+        </div>
+    </section>
+
+    <section class="working-with-flexbox-row">
+        <div class="flex-child"></div>
+        <div class="flex-child"></div>
+        <div class="flex-child"></div>
+    </section>
+
+    <section class="working-with-flexbox-column">
+        <div class="flex-child"></div>
+        <div class="flex-child"></div>
+        <div class="flex-child"></div>
+    </section>
+
+
+
+
+
     <script src="js/script.js"></script>
 </body>
+
 </html>
